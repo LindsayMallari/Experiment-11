@@ -35,9 +35,29 @@
 2. Decrease the sampling frequency gradually.
 3. Observe distortion when the sampling rate falls **below the Nyquist rate**.
 
-## Key Concept
-Nyquist Theorem:  
-\[
+## Results
+
+- The **2 kHz sine wave** was successfully sampled using both **Natural Sampling** and **Sample-and-Hold** techniques.
+- In **Natural Sampling**, the pulses followed the shape of the original signal.
+- In **Sample-and-Hold**, the pulses had a **flat-top shape**, showing the signal value was held during the sampling period.
+- Using the **Tuneable LPF**, the original **2 kHz sine wave** was successfully reconstructed.
+- When the sampling frequency was reduced below the required level, **aliasing distortion** was observed.
+
+---
+
+## Discussion
+
+The experiment demonstrated how continuous signals can be converted into sampled signals and later reconstructed. The **Sample-and-Hold circuit** maintained the sampled voltage level, producing flat-top pulses that are easier for digital systems to process. The **Tuneable Low-Pass Filter (LPF)** removed high-frequency components from the sampled signal, allowing the original waveform to be recovered. When the sampling frequency dropped below the **Nyquist rate**, aliasing occurred, causing distortion in the reconstructed signal.
+
+---
+
+## Learnings
+
+- Sampling converts **continuous signals into discrete signals**.
+- **Sample-and-Hold** circuits maintain signal value during the sampling period.
+- A **Low-Pass Filter** is needed to reconstruct the original signal.
+- The **Nyquist-Shannon Sampling Theorem** is essential to prevent aliasing.
+- Sampling below the Nyquist rate results in **signal distortion**.
 f_s \ge 2f_{max}
 \]
 
